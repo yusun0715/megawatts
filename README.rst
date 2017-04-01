@@ -12,10 +12,10 @@ Docker
 
 Run in Docker Linux
 
-docker-compose build
-docker-compose up -d
-docker-compose run sitemanagement bin/run_test_with_coverage.sh
-docker-compose run sitemanagement python manage.py test --settings=sitemanagement.settings
+-docker-compose build
+-docker-compose up -d
+-docker-compose run sitemanagement bin/run_test_with_coverage.sh
+-docker-compose run sitemanagement python manage.py test --settings=sitemanagement.settings
 
 You can connect to the application by visiting http://localhost:8002/sites
 Replacing the test command with any other manage.py command will work as well.
