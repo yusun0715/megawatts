@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3MW - Application Task</title>
+    <meta name="viewport" content="width=520, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li role="presentation" >
+                        <a href="/sites">Sites</a>
+                </li>
+                <li class="active" role="presentation" >
+                        <a href="/summary">Summary</a>
+                </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+      </nav>
+
+
+
+    <div class="container">
+        <h1>Summary</h1>
+
+          <a href="/summary"><button type="button" class="btn btn-primary active">Sum</button></a>
+          <a href="/summary-average"><button type="button" class="btn btn-primary">Average</button></a>
+
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><strong>Site</strong></td>
+                    <td><strong>A Value</strong></td><td><strong>B Value</strong></td>
+                </tr>
+            </thead>
+                {% for site_summary in site_summaries %}
+                    <tr>
+                        <td>{{ site_summary.site_name }}</td>
+                        <td>{{ site_summary.a_value }}</td>
+                        <td>{{ site_summary.b_value }}</td>
+                    </tr>
+
+                {% endfor %}
+
+        </table>
+    </div>
+
+
+</body>
+</html>

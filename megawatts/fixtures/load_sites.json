@@ -1,0 +1,83 @@
+[
+    {
+        "pk": 1,
+        "model": "megawatts.MegaSite",
+        "fields": {
+            "site_name": "Demo Site"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "megawatts.MegaSite",
+        "fields": {
+            "site_name": "ABC Site"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "megawatts.MegaSite",
+        "fields": {
+            "site_name": "XYZ Site"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "megawatts.MegaSiteDetail",
+        "fields": {
+            "site": 1,
+            "date": "2015-02-01",
+            "a_value": 12.00,
+            "b_value": 16.00
+        }
+    },
+    {
+        "pk": 2,
+        "model": "megawatts.MegaSiteDetail",
+        "fields": {
+            "site": 1,
+            "date": "2015-02-03",
+            "a_value": 20.00,
+            "b_value": 100.00
+        }
+    },
+    {
+        "pk": 3,
+        "model": "megawatts.MegaSiteDetail",
+        "fields": {
+            "site": 1,
+            "date": "2015-02-10",
+            "a_value": 20.00,
+            "b_value": 80.00
+        }
+    },
+    {
+        "pk": 4,
+        "model": "megawatts.MegaSiteDetail",
+        "fields": {
+            "site": 2,
+            "date": "2015-02-03",
+            "a_value": 5.00,
+            "b_value": 15.00
+        }
+    },
+    {
+        "pk": 5,
+        "model": "megawatts.MegaSiteDetail",
+        "fields": {
+            "site": 2,
+            "date": "2015-02-15",
+            "a_value": 5.00,
+            "b_value": 15.00
+        }
+    },
+    {
+        "pk": 6,
+        "model": "megawatts.MegaSiteDetail",
+        "fields": {
+            "site": 3,
+            "date": "2015-02-28",
+            "a_value": 5.00,
+            "b_value": 15.00
+        }
+    }
+]

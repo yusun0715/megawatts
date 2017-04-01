@@ -1,0 +1,1 @@
+from megawatts.logic.logic import MegaSiteLogic

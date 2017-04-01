@@ -1,0 +1,38 @@
+FROM centos:7
+
+ENV PYTHONUNBUFFERED 1
+
+RUN adduser django
+
+RUN mkdir -p /opt/sitemanagement/reports/htmlcov
+RUN mkdir -p /var/log/megawatts/sitemanagement
+
+RUN chown -R django:django /opt/sitemanagement
+RUN chown -R django:django /var/log/megawatts
+
+WORKDIR /opt/sitemanagement
+
+RUN yum install -y epel-release
+RUN yum install -y wget gcc python-devel \
+                   postgresql-client postgresql-libs postgresql-devel \
+                   python34 python34-devel openssl redis libcurl-devel \
+                   python34-pycurl
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.4 0
+
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+
+ADD requirements.txt /opt/sitemanagement
+ADD requirements.txt /opt/sitemanagement
+RUN pip install -r /opt/sitemanagement/requirements.txt --upgrade
+
+ADD . /opt/sitemanagement
+VOLUME /opt/sitemanagement/reports
+
+COPY ./docker/migrate-load-data.sh .
+RUN chmod +x migrate-load-data.sh
+COPY ./docker/wait-for-db.sh .
+RUN chmod +x wait-for-db.sh
+COPY ./docker/run_server.sh .
+RUN chmod +x run_server.sh
