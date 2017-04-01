@@ -1,16 +1,25 @@
+###############
 Site Management
+###############
 
+*************
 Documentation
+*************
 
 Getting started
+===============
+
 This repository is for site management. It uses an architecture design pattern called
 dependency injection. This is specifically useful for constructing unittests.
 It will only expose a "logic" object which corresponds to the idea of encapsulation.
 
 
+******
 Docker
+******
 
 Run in Docker Linux
+===================
 
 - ``docker-compose build``
 - ``docker-compose up -d``
